@@ -1,0 +1,24 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Variables";
+}
+
+
+<section class="content show" id="home">
+    <h1>Variables</h1>
+    <h5>Estas fueron cargadas automaticamente en el pod.</h5>
+
+
+    @{
+
+        // get all
+        var enumerator = Environment.GetEnvironmentVariables().GetEnumerator();
+        while (enumerator.MoveNext())
+        {
+            <p> <b>@{ Write(enumerator.Key); }</b> : @{ Write(enumerator.Value.ToString()); } </p>
+        }
+    }
+
+    <p><a href="/">Volver</a></p>
+</section>

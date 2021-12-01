@@ -1,0 +1,24 @@
+﻿@page
+@model MyAppWeb.Pages.PingoutModel
+@{
+}
+ 
+
+<section class="content show" id="home">
+    <h1>Ping</h1>
+
+    @{ using (Html.BeginForm("Register", "Registration", FormMethod.Post))
+        {
+            <input type="domain" name="domain">
+            <input type="submit" value="Enviar">
+        }
+    }
+<br />
+<p style="color: #ddd;">
+    @{ WriteLiteral(ViewData["console"]);}
+</p>
+    
+    <br />
+    <button onclick="location.href = '/';" style="font-size:24px">Volver <i class="fa boom  "></i></button>
+
+</section>
